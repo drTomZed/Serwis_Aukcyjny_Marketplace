@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<jsp:useBean id="now" class="java.util.Date"/>
+<%@ page contentType="text/html; charset=UTF-8"%>
+
 
 <head>
   <meta charset="utf-8">
@@ -10,22 +13,22 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../../../clientresources/img/favicon.png" rel="icon">
+  <link href="../../../clientresources/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../../../clientresources/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../../../clientresources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../clientresources/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../../clientresources/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../../../clientresources/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../../clientresources/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../../../clientresources/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: FlexStart
@@ -43,7 +46,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.jsp" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="../../../clientresources/img/logo.png" alt="">
         <span>FlexStart</span>
       </a>
 
@@ -107,7 +110,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                <img src="../../../clientresources/img/blog/blog-1.jpg" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -137,7 +140,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                <img src="../../../clientresources/img/blog/blog-2.jpg" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -167,7 +170,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                <img src="../../../clientresources/img/blog/blog-3.jpg" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -197,7 +200,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
+                <img src="../../../clientresources/img/blog/blog-4.jpg" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -261,31 +264,31 @@
               <h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-1.jpg" alt="">
+                  <img src="../../../clientresources/img/blog/blog-recent-1.jpg" alt="">
                   <h4><a href="blog-single.jsp">Nihil blanditiis at in nihil autem</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-2.jpg" alt="">
+                  <img src="../../../clientresources/img/blog/blog-recent-2.jpg" alt="">
                   <h4><a href="blog-single.jsp">Quidem autem et impedit</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-3.jpg" alt="">
+                  <img src="../../../clientresources/img/blog/blog-recent-3.jpg" alt="">
                   <h4><a href="blog-single.jsp">Id quia et et ut maxime similique occaecati ut</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-4.jpg" alt="">
+                  <img src="../../../clientresources/img/blog/blog-recent-4.jpg" alt="">
                   <h4><a href="blog-single.jsp">Laborum corporis quo dara net para</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-5.jpg" alt="">
+                  <img src="../../../clientresources/img/blog/blog-recent-5.jpg" alt="">
                   <h4><a href="blog-single.jsp">Et dolores corrupti quae illo quod dolor</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
@@ -344,7 +347,7 @@
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
             <a href="index.jsp" class="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt="">
+              <img src="../../../clientresources/img/logo.png" alt="">
               <span>FlexStart</span>
             </a>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
@@ -411,16 +414,16 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="../../../clientresources/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../../../clientresources/vendor/aos/aos.js"></script>
+  <script src="../../../clientresources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../../clientresources/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../../../clientresources/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../../../clientresources/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../../clientresources/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../../../clientresources/js/main.js"></script>
 
 </body>
 

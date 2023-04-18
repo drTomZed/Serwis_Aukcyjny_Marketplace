@@ -5,9 +5,11 @@ import com.projekt_koncowy.serwis_aukcyjny_marketplace.repository.CategoryReposi
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
+@ExtendWith(MockitoExtension.class)
 class CategoryServiceTest {
     @Mock
     private CategoryRepository categoryRepository;
@@ -31,8 +33,8 @@ class CategoryServiceTest {
     @Test
     public void testGetAllCategories() {
         List<CategoryModel> expectedCategories = new ArrayList<>();
-        expectedCategories.add(new CategoryModel(1L, null, "Category 1", null, null, null,null, null,null, null));
-        expectedCategories.add(new CategoryModel(2L, null, "Category 2", null, null, null,null, null,null, null));
+        expectedCategories.add(new CategoryModel(1L, null, "Category 1", null, null,null, null,null, null));
+        expectedCategories.add(new CategoryModel(2L, null, "Category 2", null, null,null, null,null, null));
         when(categoryRepository.findAll()).thenReturn(expectedCategories);
 
         List<CategoryModel> actualCategories = categoryService.getAllCategories();
@@ -44,8 +46,8 @@ class CategoryServiceTest {
     @Test
     public void testGetRootCategories() {
         List<CategoryModel> expectedCategories = new ArrayList<>();
-        expectedCategories.add(new CategoryModel(1L, null, "Category 1", null, null, null,null, null,null, null));
-        expectedCategories.add(new CategoryModel(2L, null, "Category 2", null, null, null,null, null,null, null));
+        expectedCategories.add(new CategoryModel(1L, null, "Category 1", null, null,null, null,null, null));
+        expectedCategories.add(new CategoryModel(2L, null, "Category 2", null, null,null, null,null, null));
         when(categoryRepository.findByParentIsNull()).thenReturn(expectedCategories);
 
         List<CategoryModel> actualCategories = categoryService.getRootCategories();
@@ -58,8 +60,8 @@ class CategoryServiceTest {
     public void testGetCategoriesByParentId() {
         Long parentId = 1L;
         List<CategoryModel> expectedCategories = new ArrayList<>();
-        expectedCategories.add(new CategoryModel(1L, null, "Category 1", null, null, null,null, null,null, null));
-        expectedCategories.add(new CategoryModel(2L, null, "Category 2", null, null, null,null, null,null, null));
+        expectedCategories.add(new CategoryModel(1L, null, "Category 1", null, null,null, null,null, null));
+        expectedCategories.add(new CategoryModel(2L, null, "Category 2", null,  null,null, null,null, null));
         when(categoryRepository.findByParentId(parentId)).thenReturn(expectedCategories);
 
         List<CategoryModel> actualCategories = categoryService.getCategoriesByParentId(parentId);
@@ -71,7 +73,7 @@ class CategoryServiceTest {
     @Test
     public void testGetCategoryById() {
         Long categoryId = 1L;
-        CategoryModel expectedCategory = new CategoryModel(categoryId,  null, "Category 1", null, null, null,null, null,null, null);
+        CategoryModel expectedCategory = new CategoryModel(categoryId,  null, "Category 1", null,  null,null, null,null, null);
         when(categoryRepository.findById(categoryId)).thenReturn(Optional.of(expectedCategory));
 
         CategoryModel actualCategory = categoryService.getCategoryById(categoryId);

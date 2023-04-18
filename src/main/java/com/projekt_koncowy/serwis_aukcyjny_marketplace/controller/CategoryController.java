@@ -3,23 +3,26 @@ package com.projekt_koncowy.serwis_aukcyjny_marketplace.controller;
 import com.projekt_koncowy.serwis_aukcyjny_marketplace.model.CategoryModel;
 import com.projekt_koncowy.serwis_aukcyjny_marketplace.service.CategoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
-@RestController
-@RequestMapping("/category")
+@Controller
+@RequestMapping(value = "/category", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class CategoryController {
 
     private final CategoryService categoryService;
 
     @GetMapping("/categories")
-    public List<CategoryModel> getAllCategories() {
-        return categoryService.getAllCategories();
+    public String getAllCategories(Model model) {
+        List<CategoryModel> categoryModelList = categoryService.getAllCategories();
+        model.addAttribute("categoryModel", categoryModelList);
+        return "customervievs/index";
     }
 
     @GetMapping("/categories/root")
@@ -37,4 +40,20 @@ public class CategoryController {
         return categoryService.getCategoryById(id);
     }
 
+    @PostMapping("/add")
+    public String addCategory(@RequestParam("name") String name, @RequestParam("parentId") Long parentId) {
+        CategoryModel category = new CategoryModel();
+        category.setCategoryName(name);
+
+        if (parentId != null) {
+            Optional<CategoryModel> parentCategory = Optional.ofNullable(categoryService.getCategoryById(parentId));
+            if (parentCategory.isPresent()) {
+                category.setParent(parentCategory.get());
+            }
+        }
+
+        categoryService.addCategory(category);
+        return "redirect:/";
+
+    }
 }

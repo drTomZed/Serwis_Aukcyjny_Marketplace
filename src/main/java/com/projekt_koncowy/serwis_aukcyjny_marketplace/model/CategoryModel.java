@@ -30,9 +30,6 @@ public class CategoryModel {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "image")
-    @Lob
-    private byte[] image;
 
     @Column(name = "category_status")
     private String categoryStatus;
