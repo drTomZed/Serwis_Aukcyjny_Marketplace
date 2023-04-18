@@ -23,8 +23,8 @@ public class ProductModel {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "product_title")
+    private String productTitle;
 
     @Column(name = "description")
     private String description;
