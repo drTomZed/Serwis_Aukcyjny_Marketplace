@@ -33,8 +33,6 @@ public class ProductModel {
     @JoinColumn(name = "category_id")
     private CategoryModel categoryModel;
 
-    private BigDecimal price;
-
     @ManyToOne
     @JoinColumn(name = "seller_id")
     private SellerModel seller;
@@ -48,8 +46,8 @@ public class ProductModel {
     private String location;
     @Column(name = "minimum_bid")
     private BigDecimal minimumBid;
-    @Column(name = "buy_now_amount")
-    private BigDecimal buyNowAmount;
+    @Column(name = "buy_now_price")
+    private BigDecimal buyNowPrice;
     @Column(name = "listing_start_time")
     private LocalDateTime listingStartTime;
     @Column(name = "listing_end_time")
